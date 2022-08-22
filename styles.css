@@ -1,0 +1,12 @@
+:root {
+    --azul-claro: #71B8E3;
+    --branco-principal: #fefefe;
+}
+
+main {
+    background: linear-gradient(var(--azul-claro), var(--branco-principal)) 
+}
+
+.pokedex {    
+    padding: 100px;
+}
