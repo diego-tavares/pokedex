@@ -3,10 +3,13 @@
     --branco-principal: #fefefe;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 main {
     background: linear-gradient(var(--azul-claro), var(--branco-principal)) 
 }
 
-.pokedex {    
-    padding: 100px;
-}
