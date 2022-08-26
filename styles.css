@@ -9,7 +9,19 @@
     box-sizing: border-box;
 }
 
-main {
-    background: linear-gradient(var(--azul-claro), var(--branco-principal)) 
+body {
+    text-align: center;
+    background: linear-gradient(var(--azul-claro), var(--branco-principal));
+    min-height: 100vh;
 }
 
+main {
+    
+    display:inline-block;
+    margin-top: 2%;
+}
+
+.pokedex {
+    width: 100%;
+    max-width: 800px;
+}
