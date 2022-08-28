@@ -3,6 +3,8 @@
     --branco-principal: #fefefe;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -13,10 +15,11 @@ body {
     text-align: center;
     background: linear-gradient(var(--azul-claro), var(--branco-principal));
     min-height: 100vh;
+    position: relative;
 }
 
 main {
-    
+    font-family: 'Silkscreen', cursive;
     display:inline-block;
     margin-top: 2%;
 }
@@ -24,4 +27,38 @@ main {
 .pokedex {
     width: 100%;
     max-width: 800px;
+}
+
+.pokemon__image {
+    height: 115px;
+    position: absolute;
+    left: 23%;
+    bottom: 62%;
+}
+
+.pokemon__data {
+    position: absolute;
+    font-weight: 300;
+    font-size: 30px;
+    top: 40%;
+    right: 60%;
+}
+
+.pokemon__name {
+    text-transform: capitalize;
+}
+
+.form {
+    position: absolute;
+    font-size: 20px;
+    top: 47%;
+    left: 13%;
+    width: 300px;
+    height: 3vh;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: -3px 3px 0 gray, -5px 5px 0 black
+
 }
