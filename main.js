@@ -9,6 +9,8 @@ const buttonNext = document.querySelector('.button-next');
 
 let searchPokemon = 1;
 
+
+
 const fetchPokemon = async (pokemon) => {
     const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
 
@@ -26,10 +28,9 @@ const renderPokemon = async (pokemon) => {
     const data = await fetchPokemon(pokemon);
 
     if (data) {
-
-        pokemonNumber.innerHTML = data.id+" - "
-        pokemonName.innerHTML = data.name;   
-        pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+    pokemonName.innerHTML = data.name;
+    pokemonNumber.innerHTML = data.id+" - ";
+    pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
     
     inputForm.value = '';
     searchPokemon = data.id;
@@ -60,6 +61,3 @@ inputForm.addEventListener('submit', (inputEvent) => {
     searchPokemon +=1
     renderPokemon(searchPokemon);
   });
-
-
-//   <div style='position:relative; padding-bottom:calc(56.25% + 44px)'><iframe src='https://gfycat.com/ifr/ClumsySaneArmednylonshrimp' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div><p> <a href="https://gfycat.com/clumsysanearmednylonshrimp">via Gfycat</a></p>

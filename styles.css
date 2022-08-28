@@ -90,3 +90,63 @@ main {
     box-shadow: inset -3px 3px 0 gray;
     font-size: 0.8rem;
 }
+
+.stats {
+    font-size: clamp(6px, 3vw, 30px);
+    width: 50%;
+    text-align: left;
+}
+
+.HP {
+    position: absolute;
+    font-weight: 400;
+    bottom: 65%;
+    left:59%;
+
+    
+
+}
+
+.attack {
+    position: absolute;
+    font-weight: 400;
+    bottom: 56%;
+    left:59%;
+
+    
+
+}
+
+.defense {
+    position: absolute;
+    font-weight: 400;
+    bottom: 47%;
+    left:59%;
+
+}
+
+.special-attack {
+    position: absolute;
+    font-weight: 400;
+    bottom: 38%;
+    left:59%;;
+
+}
+
+.special-defense {
+    position: absolute;
+    font-weight: 400;
+    bottom: 29%;
+    left:59%;
+
+    
+}
+
+.speed {
+    position: absolute;
+    font-weight: 400;
+    bottom: 20%;
+    left:59%;
+
+    
+}
