@@ -43,7 +43,7 @@ main {
     font-weight: 300;
     top: 59%;
     right: 55%;
-    font-size: clamp(6px, 4vw, 5vw);
+    font-size: clamp(6px, 4vw, 35px);
 
 }
 
@@ -83,7 +83,7 @@ main {
     height: 150%;
     text-align: center;
     box-shadow: -3px 3px 0 gray, -5px 5px 0 black;
-    font-size: clamp(6px, 2vw, 3vw);
+    font-size: clamp(6px, 2vw, 20px);
 }
 
 .button:active {
