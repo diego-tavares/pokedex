@@ -26,9 +26,10 @@ const renderPokemon = async (pokemon) => {
     const data = await fetchPokemon(pokemon);
 
     if (data) {
-    pokemonName.innerHTML = data.name;
-    pokemonNumber.innerHTML = data.id;
-    pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+
+        pokemonNumber.innerHTML = data.id+" - "
+        pokemonName.innerHTML = data.name;   
+        pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
     
     inputForm.value = '';
     searchPokemon = data.id;
