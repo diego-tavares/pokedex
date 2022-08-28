@@ -97,56 +97,44 @@ main {
     text-align: left;
 }
 
-.HP {
+.pokemon__HP {
     position: absolute;
     font-weight: 400;
     bottom: 65%;
     left:59%;
-
-    
-
 }
 
-.attack {
+.pokemon__attack {
     position: absolute;
     font-weight: 400;
     bottom: 56%;
     left:59%;
-
-    
-
 }
 
-.defense {
+.pokemon__defense {
     position: absolute;
     font-weight: 400;
     bottom: 47%;
     left:59%;
-
 }
 
-.special-attack {
+.pokemon__special-attack {
     position: absolute;
     font-weight: 400;
     bottom: 38%;
     left:59%;;
-
 }
 
-.special-defense {
+.pokemon__special-defense {
     position: absolute;
     font-weight: 400;
     bottom: 29%;
     left:59%;
-
-    
 }
 
-.speed {
+.pokemon__speed {
     position: absolute;
     font-weight: 400;
     bottom: 20%;
     left:59%;
-
-    
 }
