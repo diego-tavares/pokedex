@@ -1,14 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
 :root {
     --azul-claro: rgb(52, 93, 182);
     --branco-principal: #fefefe;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body {
@@ -41,9 +42,9 @@ main {
 .pokemon__data {
     position: absolute;
     font-weight: 300;
-    top: 59%;
+    top: 60%;
     right: 55%;
-    font-size: clamp(6px, 4vw, 35px);
+    font-size: clamp(6px, 3.5vw, 35px);
 
 }
 
@@ -64,6 +65,7 @@ main {
     font-weight: 600;
     text-align: center;
     box-shadow: -3px 3px 0 gray, -5px 5px 0 black;
+    font-family: 'Silkscreen', cursive;
 
 }
 
@@ -76,6 +78,7 @@ main {
     display: flex;
     justify-content: center;
     gap: 10%;
+    
 }
 
 .button {
@@ -83,7 +86,8 @@ main {
     height: 150%;
     text-align: center;
     box-shadow: -3px 3px 0 gray, -5px 5px 0 black;
-    font-size: clamp(6px, 2vw, 20px);
+    font-size: clamp(6px, 1.5vw, 15px);
+    font-family: 'Silkscreen', cursive;
 }
 
 .button:active {
