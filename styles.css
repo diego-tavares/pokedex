@@ -52,7 +52,7 @@ main {
     
 }
 
-.form {
+.input__search {
     position: absolute;
     font-size: clamp(6px, 3vw, 20px);
     top: 70%;
