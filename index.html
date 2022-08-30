@@ -2,9 +2,12 @@
 <html>
 <head>
     <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="'viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Pokédex</title>
-    <script src='main.js'></script>
+    <link rel="icon" href="./img/favicon.ico">
+
+    
+    <script defer src='main.js'></script>
         
     
     <link rel="stylesheet" href="styles.css">
@@ -14,9 +17,36 @@
     <main>
         <img src="#" alt="Pokémon" class="pokemon__image">
 
-
         <img src="img/pokedex.png" alt="Pokédex" class="pokedex">
 
+        <h1 class="pokemon__data">
+            <span class="pokemon__number"></span>
+            <spam class="pokemon__name"></spam>
+        </h1>
+    <form class="form">
+        <input
+        type="search"
+        class="input__search"
+        placeholder="Name or number"
+        required
+        />
+    </form>
+
+    <div class="buttons">
+        <button class=" button button-previous">&lt Previous</button>
+        <button class=" button button-next">Next &gt</button>
+    </div>
+
+    <div class ="status">
+        <h1 class="stats">
+            <span class="pokemon__HP">HP</span>
+            <span class="pokemon__attack">Attack</span>
+            <span class="pokemon__defense">Defense</span>
+            <span class="pokemon__special-attack">Sp. Attack</span>
+            <span class="pokemon__special-defense">Sp. Defense</span>
+            <span class="pokemon__speed">Speed</span>
+        </h1>
+    </div>
     
     </main>
 
