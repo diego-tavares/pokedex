@@ -44,7 +44,7 @@ main {
     font-weight: 300;
     top: 60%;
     right: 55%;
-    font-size: clamp(6px, 3.5vw, 35px);
+    font-size: clamp(6px, 3vw, 35px);
 
 }
 
@@ -86,7 +86,7 @@ main {
     height: 150%;
     text-align: center;
     box-shadow: -3px 3px 0 gray, -5px 5px 0 black;
-    font-size: clamp(6px, 1.5vw, 15px);
+    font-size: clamp(6px, 1.4vw, 15px);
     font-family: 'Silkscreen', cursive;
 }
 
@@ -99,46 +99,42 @@ main {
     font-size: clamp(6px, 3vw, 30px);
     width: 50%;
     text-align: left;
+    left: 59%;
+    font-weight: 400;
 }
 
 .pokemon__HP {
     position: absolute;
-    font-weight: 400;
     bottom: 65%;
     left:59%;
 }
 
 .pokemon__attack {
     position: absolute;
-    font-weight: 400;
     bottom: 56%;
     left:59%;
 }
 
 .pokemon__defense {
     position: absolute;
-    font-weight: 400;
     bottom: 47%;
     left:59%;
 }
 
 .pokemon__special-attack {
     position: absolute;
-    font-weight: 400;
     bottom: 38%;
     left:59%;;
 }
 
 .pokemon__special-defense {
     position: absolute;
-    font-weight: 400;
     bottom: 29%;
     left:59%;
 }
 
 .pokemon__speed {
     position: absolute;
-    font-weight: 400;
     bottom: 20%;
     left:59%;
 }
