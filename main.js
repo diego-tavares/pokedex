@@ -1,91 +1,80 @@
-const pokemonName = document.querySelector('.pokemon__name');
-const pokemonNumber = document.querySelector('.pokemon__number');
-const pokemonImage = document.querySelector('.pokemon__image');
+var index = 0,
+    amount = 0,
+    currTransl = [],
+    translationComplete = true,
+    moveOffset = 0;
 
-const pokemonHP = document.querySelector('.pokemon__HP');
-const pokemonAttack = document.querySelector('.pokemon__attack');
-const pokemonDefense = document.querySelector('.pokemon__defense');
-const pokemonSPAttack = document.querySelector('.pokemon__special-attack');
-const pokemonSPDefense = document.querySelector('.pokemon__special-defense');
-const pokemonSpeed = document.querySelector('.pokemon__speed');
+var transitionCompleted = function(){
+    translationComplete = true;
+}
 
-const inputForm = document.querySelector('.form');
-const input = document.querySelector('.input__search');
-const buttonPrevious= document.querySelector('.button-previous');
-const buttonNext = document.querySelector('.button-next');
+document.addEventListener("DOMContentLoaded", function(event) 
+{
+    var carousel = document.getElementById('carousel');
 
-let searchPokemon = 1;
+    amount = document.getElementsByClassName("slide").length;
+    // get the width of the container
+    moveOffset = parseInt(window.getComputedStyle(document.getElementById('carousel-container')).width, 10);
+    // calcuate the width of the carousel
+    document.getElementById('carousel').style.width = (amount * moveOffset) + 'px';
+    // prevent multiple click when transition
+    for(var i = 0; i < amount; i++)
+    {
+        currTransl[i] = -moveOffset;
+        document.getElementsByClassName("slide")[i].addEventListener("transitionend", transitionCompleted, true);                    
+        document.getElementsByClassName("slide")[i].addEventListener("webkitTransitionEnd", transitionCompleted, true);                    
+        document.getElementsByClassName("slide")[i].addEventListener("oTransitionEnd", transitionCompleted, true);                    
+        document.getElementsByClassName("slide")[i].addEventListener("MSTransitionEnd", transitionCompleted, true);                  
+    }
+    // add the last item to the start so that translateX(-moveOffset) works (In case the first click is the previous button)
+    document.getElementById('carousel').insertBefore(document.getElementById('carousel').children[4], document.getElementById('carousel').children[0])
+    // add click events to control arrows
+    document.getElementById('prev').addEventListener('click', prev, true);
+    document.getElementById('next').addEventListener('click', next, true);
+});
 
-
-
-const fetchPokemon = async (pokemon) => {
-    const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-
-    if (APIResponse.status === 200) {
-      const data = await APIResponse.json();
-      return data;
+function prev()
+{
+    if (translationComplete === true)
+    {
+        translationComplete = false;
+        index--;
+        if (index == -1)
+        {
+            index = amount-1;
+        }
+        var outerIndex = (index) % amount;
+        for (var i = 0; i < amount; i++)
+        {
+            var slide = document.getElementsByClassName("slide")[i];    
+            slide.style.opacity = '1';    
+            slide.style.transform = 'translateX('+(currTransl[i]+moveOffset)+'px)';
+            currTransl[i] = currTransl[i]+moveOffset;
+        }
+        var outerSlide = document.getElementsByClassName("slide")[outerIndex];
+        outerSlide.style.transform = 'translateX('+(currTransl[outerIndex]-(moveOffset*amount))+'px)';
+        outerSlide.style.opacity = '0';
+        currTransl[outerIndex] = currTransl[outerIndex]-moveOffset*(amount);
     }
 }
 
-const renderPokemon = async (pokemon) => {
-    
-        pokemonName.innerHTML = 'Searching...';
-        pokemonNumber.innerHTML = '';
-        pokemonImage.style.display = 'block';
-        pokemonHP.innerHTML = '';
-        pokemonAttack.innerHTML = '';
-        pokemonDefense.innerHTML = '';
-        pokemonSPAttack.innerHTML = '';
-        pokemonSPDefense.innerHTML = '';
-        pokemonSpeed.innerHTML = '';
-
-    const data = await fetchPokemon(pokemon);
-
-    if (data) {
-        pokemonName.innerHTML = data.name;
-        pokemonNumber.innerHTML = data.id+" - ";
-        pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
-        pokemonHP.innerHTML = "HP: "+data['stats']['0']['base_stat'];
-        pokemonAttack.innerHTML = "Attack: "+data['stats']['1']['base_stat'];
-        pokemonDefense.innerHTML = "Defense: "+data['stats']['2']['base_stat'];
-        pokemonSPAttack.innerHTML = "Sp. Attack: "+data['stats']['3']['base_stat'];
-        pokemonSPDefense.innerHTML = "Sp. Defense: "+data['stats']['4']['base_stat'];
-        pokemonSpeed.innerHTML = "Speed: "+data['stats']['5']['base_stat'];
-
-    inputForm.value = '';
-
-    searchPokemon = data.id;
-
-    } else {
-        pokemonName.innerHTML = 'Not found :C';
-        pokemonNumber.innerHTML = '';
-        pokemonImage.style.display = 'none';
-        pokemonHP.innerHTML = '';
-        pokemonAttack.innerHTML = '';
-        pokemonDefense.innerHTML = '';
-        pokemonSPAttack.innerHTML = '';
-        pokemonSPDefense.innerHTML = '';
-        pokemonSpeed.innerHTML = '';
+function next()
+{
+    if (translationComplete === true)
+    {
+        translationComplete = false;
+        var outerIndex = (index) % amount;
+        index++;
+        for(var i = 0; i < amount; i++)
+        {
+            var slide = document.getElementsByClassName("slide")[i];    
+            slide.style.opacity = '1';    
+            slide.style.transform = 'translateX('+(currTransl[i]-moveOffset)+'px)';
+            currTransl[i] = currTransl[i]-moveOffset;
+        }
+        var outerSlide = document.getElementsByClassName("slide")[outerIndex];
+        outerSlide.style.transform = 'translateX('+(currTransl[outerIndex]+(moveOffset*amount))+'px)';
+        outerSlide.style.opacity = '0';
+        currTransl[outerIndex] = currTransl[outerIndex]+moveOffset*(amount);
     }
 }
-
-inputForm.addEventListener('submit', (inputEvent) => {
-    inputEvent.preventDefault();
-    renderPokemon(input.value.toLowerCase());
-  });
-
-  renderPokemon(searchPokemon);
-
-  buttonPrevious.addEventListener('click', (inputEvent) => {
-    if (searchPokemon<2) {
-        searchPokemon = 1
-    } else {
-        searchPokemon -=1
-        renderPokemon(searchPokemon);
-    }
-  });
-
-  buttonNext.addEventListener('click', (inputEvent) => {
-    searchPokemon +=1
-    renderPokemon(searchPokemon);
-  });
