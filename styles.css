@@ -1,124 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
 :root {
-    --branco-letras: #fefefe;
+    --azul-claro: rgb(52, 93, 182);
+    --branco-principal: #fefefe;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-header {
-    font-family: 'Dancing Script', cursive;
-    font-size: clamp(14px, 3vw, 35px);
+    
 }
 
 body {
     text-align: center;
-    background: linear-gradient(#7fffd4, #fefefe);
+    background: linear-gradient(var(--azul-claro), var(--branco-principal));
     min-height: 100vh;
-    height: 100%;
-    background-repeat: no-repeat;
-    
+    font-family: 'Silkscreen', cursive;
 }
 
-#carousel-container {
-	width: 500px;
-	height: 332px;
-	position: relative;
-	margin: 50px auto 0;
-
+main {
+    display:inline-block;
+    margin-top: 2%;
+    padding: 15px;
+    position: relative;
 }
 
-#carousel-container > div:first-child {
-	overflow: hidden;
-	max-width: 100%;
-	margin: 0;
-}
-
-#carousel {
-	position: relative;
-	width: 5000px;
-	height: 332px;
-  padding: 0;
-  margin: 0;
-}
-
-.animate{
-	-webkit-transition-duration: .5s;
-  -moz-transition-duration: .5s;
-  -o-transition-duration: .5s;
-  transition-duration: .5s;
-  -webkit-transition-property: -webkit-transform;
-  -moz-transition-property: -moz-transform;
-  -o-transition-property: -o-transform;
-  transition-property: transform;
-}
-
-.slide {
-  list-style: none;
-	position: relative;
-	float: left;
-	transform: translateX(-500px)
-}
-
-#controls{
-	position: absolute;
-    width: 620px;
-	top: calc( 50% - 25px);
-	margin: 0 -60px;
-}
-
-#controls span {
-	width: 50px;
-	cursor: pointer;
-	opacity: 0.4;
-}
-
-#controls span:hover {
-	opacity: 1;
-}
-
-#prev {
-	float: left;
-}
-
-#next {
-	float: right;
-}
-
-.torta {
-position: absolute;
-}
-
-
-.torta__maracuja {
-    max-width: 380px;
+.pokedex {
     width: 100%;
+    max-width: 810px;
+}
+
+.pokemon__image {
+    position: absolute;
+    bottom: 48%;
+    left: 28%;
+    transform: translate(-68%, 25%);
+    height: 18%;
+}
+
+.pokemon__data {
+    position: absolute;
+    font-weight: 300;
+    top: 60%;
+    right: 55%;
+    font-size: clamp(6px, 3vw, 35px);
+
+}
+
+.pokemon__name {
+    text-transform: capitalize;
     
 }
 
-.torta__morango {
-    max-width: 380px;
-    width: 100%;
-    
-}
-
-.torta__limao {
-    max-width: 380px;
-    width: 100%;
-    
-}
-
-
-/* ul li {
-    color: var(--branco-letras);
+.input__search {
+    position: absolute;
+    font-size: clamp(6px, 3vw, 20px);
+    top: 70%;
+    left: 6%;
+    width: 40%;
+    height: 3vh;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-weight: 600;
     text-align: center;
+    box-shadow: -3px 3px 0 gray, -5px 5px 0 black;
+    font-family: 'Silkscreen', cursive;
+
+}
+
+.buttons {
+    position: absolute;
+    height: 5%;
+    top: 80%;
+    left: 2%;
+    width: 50%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 10%;
-    font-size: clamp(12px, 3vw, 20px);
-} */
+    
+}
+
+.button {
+    width: 25%;
+    height: 150%;
+    text-align: center;
+    box-shadow: -3px 3px 0 gray, -5px 5px 0 black;
+    font-size: clamp(6px, 1.4vw, 15px);
+    font-family: 'Silkscreen', cursive;
+}
+
+.button:active {
+    box-shadow: inset -3px 3px 0 gray;
+    font-size: 0.8rem;
+}
+
+.stats {
+    font-size: clamp(6px, 3vw, 30px);
+    width: 50%;
+    text-align: left;
+    left: 59%;
+    font-weight: 400;
+}
+
+.pokemon__HP {
+    position: absolute;
+    bottom: 65%;
+    left:59%;
+}
+
+.pokemon__attack {
+    position: absolute;
+    bottom: 56%;
+    left:59%;
+}
+
+.pokemon__defense {
+    position: absolute;
+    bottom: 47%;
+    left:59%;
+}
+
+.pokemon__special-attack {
+    position: absolute;
+    bottom: 38%;
+    left:59%;;
+}
+
+.pokemon__special-defense {
+    position: absolute;
+    bottom: 29%;
+    left:59%;
+}
+
+.pokemon__speed {
+    position: absolute;
+    bottom: 20%;
+    left:59%;
+}

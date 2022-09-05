@@ -1,1 +1,3 @@
-Estruturação de uma landing page de tortas, utilizando somente html e css para boa visualização.
+## Pokedex
+
+Criação de uma pokedex em HTML, CSS e Javascript, consumindo a PokéAPI para visualização de dados.

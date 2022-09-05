@@ -1,55 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='utf-8'>
+    <meta name="'viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Pokédex</title>
+    <link rel="icon" href="./img/favicon.ico">
+
+    
+    <script defer src='main.js'></script>
+        
+    
     <link rel="stylesheet" href="styles.css">
-    <script src="main.js"></script>
-    <title>Tortas</title>
+
 </head>
 <body>
-
-    <header>
-        <img class="logo__cabecalho">
-        <h1> Aqui você encontra as melhores tortas</h1>
-        <div class="banner__principal"></div>
-    </header>
-
     <main>
-        <div id="carousel-container">
-            <div>
-                <ul id="carousel" class="animate">
-                    <li class="slide animate">
-                        <a href="torta-chocolate.html"><img src="img/torta-chocolate.jpg"/></a>
-                    </li>
-                    <li class="slide animate">
-                        <img src="img/torta-limao.jpg"/>
-                    </li> 
-                    <li class="slide animate">
-                        <img src="img/torta-maracuja.jpg"/>
-                    </li>
-                    <li class="slide animate">
-                        <img src="img/torta-morango.jpg"/>
-                    </li>
-                    <li class="slide animate">
-                        <img src="img/torta-maca.jpg"/>
-                    </li>
-                </ul> 
-            </div>
-            <div id="controls">
-                <span id="prev"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1014830/prev.png"></span>
-                <span id="next"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1014830/next.png"></span>
-            </div>
-        </div>
+        <img src="#" alt="Pokémon" class="pokemon__image">
+
+        <img src="img/pokedex.png" alt="Pokédex" class="pokedex">
+
+        <h1 class="pokemon__data">
+            <span class="pokemon__number"></span>
+            <span class="pokemon__name"></spam>
+        </h1>
+    <form class="form">
+        <input
+            type="search"
+            class="input__search"
+            placeholder="Name or number"
+            required
+        />
+    </form>
+
+    <div class="buttons">
+        <button class=" button button-previous">&lt Previous</button>
+        <button class=" button button-next">Next &gt</button>
+    </div>
+
+    <div class ="status">
+        <h1 class="stats">
+            <span class="pokemon__HP">HP</span>
+            <span class="pokemon__attack">Attack</span>
+            <span class="pokemon__defense">Defense</span>
+            <span class="pokemon__special-attack">Sp. Attack</span>
+            <span class="pokemon__special-defense">Sp. Defense</span>
+            <span class="pokemon__speed">Speed</span>
+        </h1>
+    </div>
+    
     </main>
-    <footer>
-        <ul>
-            <li>Contato</li>
-            <li>Comentários</li>
-            <li>Redes Sociais</li>
-        </ul>
-        <p>Todos os direitos reservados</p>
-    </footer>
+
 </body>
 </html>
